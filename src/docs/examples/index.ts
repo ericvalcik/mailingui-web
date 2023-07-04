@@ -69,8 +69,3 @@ export const componentTypes: ComponentType[] = [
     image: Dividers,
   },
 ];
-
-export const mdxDocs: Record<string, ReactComponentType<MDXProps>> = {
-  badges: dynamic(() => import(`src/docs/examples/badges/installation.mdx`)),
-  lists: dynamic(() => import(`src/docs/examples/lists/installation.mdx`)),
-};

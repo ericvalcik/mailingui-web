@@ -12,7 +12,19 @@ import {
   getComponentData,
   getComponentExampleProps,
 } from "@components/InstallationDocs";
-import { componentTypes, mdxDocs } from "@examples";
+import { componentTypes  } from "@examples";
+import {ComponentType as ReactComponentType} from "react";
+import {MDXProps} from "mdx/types";
+import dynamic from "next/dynamic";
+
+import BadgesMdx from "@examples/badges/installation.mdx";
+import ListsMdx from "@examples/lists/installation.mdx";
+
+
+const mdxDocs: Record<string, ReactComponentType<MDXProps>> = {
+  badges: BadgesMdx,
+  lists: ListsMdx
+};
 
 type ComponentPageProps = {
   params: {
