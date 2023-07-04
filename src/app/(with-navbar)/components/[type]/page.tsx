@@ -96,7 +96,10 @@ const getComponent = async (
     .map((file) => file.replace(".tsx", ""));
 
   const examples = await Promise.all(
-    files.map((file) => getComponentExampleProps(type, file))
+    files.map(async (file) => {
+      const componentProps = await getComponentExampleProps(type, file);
+      return componentProps;
+    })
   );
 
   return {
